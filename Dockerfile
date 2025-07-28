@@ -1,11 +1,21 @@
-# Use an official Java runtime as a parent image
+# Use Eclipse Temurin JDK as base image
 FROM eclipse-temurin:17-jdk
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
-# Copy the built JAR from the host into the container
-COPY target/*.jar app.jar
+# Copy pom.xml and download dependencies
+COPY pom.xml .
+COPY .mvn .mvn
+COPY mvnw .
+RUN ./mvnw dependency:go-offline
 
-# Run the JAR
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Copy source code
+COPY src ./src
+
+# Build the application
+RUN ./mvnw package -DskipTests
+
+# Run the application
+ENTRYPOINT ["java", "-jar", "target/*.jar"] 
+#kill me pls
