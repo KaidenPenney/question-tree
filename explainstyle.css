@@ -1,0 +1,134 @@
+/* === Global Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #3b3b3b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2.2cap;
+}
+.main{
+  flex: 1; /* put footer down*/
+}
+
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #8225b8, #77b5fe);
+  color: white;
+  padding: 5px 20px;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  border: 3px solid black;
+  border-radius: 10%;
+}
+
+.header-right{
+  text-decoration: none;
+  font-size: 50px;
+  color: #8225b8;
+  -webkit-text-stroke: 2px black;
+  cursor: default;
+  
+}
+
+.nav-link{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.nav-link:hover{
+    text-decoration: none;
+}
+
+/* === Main Content ===  all fancy like with ===*/
+.main-content{
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* === Footer === */
+footer {
+  background: linear-gradient(to right, #8225b8, #77b5fe);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight:300;
+  font-size: x-large;
+}
+
+.footer-left img {
+  height: 50px;
+  width: 50px;
+}
+
+.footer-right {
+  font-size: 1.5rem;
+}
+
+.footer-right a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .header-right {
+    margin-top: 8px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: 10px;
+  }
+
+  .footer-right {
+    margin-top: 5px;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}

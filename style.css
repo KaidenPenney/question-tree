@@ -1,0 +1,158 @@
+/* === Global Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: #3b3b3b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #8225b8, #77b5fe);
+  color: white;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 130px;
+  width: auto;
+  border: 3px solid black;
+  border-radius: 10%;
+}
+
+.header-right{
+  text-decoration: none;
+  font-size: 70px;
+  color: #8225b8;
+  -webkit-text-stroke: 3px black;
+  cursor: default;
+  
+}
+
+.nav-link{
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+.nav-link:hover{
+    text-decoration: none;
+}
+
+/* === Main Content ===  all fancy like with ===*/
+main.project-container {
+  flex: 1;
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* === Project Card === */
+.project-card {
+  color: #000;
+  display: flex;
+  align-items:center;
+  background: linear-gradient(to right, #8225b8, #77b5fe);
+  border: 1px solid #000;
+  width: 400px;
+  padding: 10px;
+  box-shadow: 5px 5px 6px;
+  font-size: xx-large;
+  text-indent: 50%;
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+}
+
+.project-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.project-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+
+/* === Footer === */
+footer {
+  background: linear-gradient(to right, #8225b8, #77b5fe);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight:300;
+  font-size: x-large;
+}
+
+.footer-left img {
+  height: 50px;
+  width: 50px;
+}
+
+.footer-right {
+  font-size: 1.5rem;
+}
+
+.footer-right a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* === Mobile Responsive === */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .header-right {
+    margin-top: 8px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: 10px;
+  }
+
+  .footer-right {
+    margin-top: 5px;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+}
