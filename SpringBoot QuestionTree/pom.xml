@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.questiontree-api</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>SpringBoot-QuestionTree</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>QuestionTree API</name>
+	<name>SpringBoot QuestionTree API</name>
 	<description>online thing for game</description>
 	<url/>
 	<licenses>
@@ -54,7 +54,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>SpringBoot-QuestionTree-0.0.1-SNAPSHOT</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
