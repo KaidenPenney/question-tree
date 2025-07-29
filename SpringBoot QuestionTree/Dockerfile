@@ -17,5 +17,5 @@ COPY src ./src
 RUN ./mvnw package -DskipTests
 
 # Run the application
-CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "target/app.jar"]
 #kill me pls
