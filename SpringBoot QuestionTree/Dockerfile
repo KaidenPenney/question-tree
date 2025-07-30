@@ -18,4 +18,3 @@ RUN ./mvnw package -DskipTests
 
 # Run the application
 CMD ["java", "-jar", "target/app.jar"]
-#kill me pls
