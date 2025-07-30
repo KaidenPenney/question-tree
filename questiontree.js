@@ -3,7 +3,7 @@ let isLeaf = false;
 
 // Load the current question from the API
 function loadQuestion() {
-  fetch('http://localhost:8081/questiontree/question')
+  fetch('https://question-tree.onrender.com/questiontree/question')
     .then(res => res.text())
     .then(text => {
       document.querySelector(".question-box").innerText = text;
@@ -25,7 +25,7 @@ function loadQuestion() {
 function answerQuestion(isYes) {
   const answer = isYes ? "yes" : "no";
 
-  fetch("http://localhost:8081/questiontree/answer", {
+  fetch("https://question-tree.onrender.com/questiontree/answer", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userAnswer: answer })
@@ -59,7 +59,7 @@ document.getElementById("submitNew").addEventListener("click", () => {
     return;
   }
 
-  fetch("http://localhost:8081/questiontree/learn", {
+  fetch("https://question-tree.onrender.com/questiontree/learn", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -82,7 +82,7 @@ document.getElementById("submitNew").addEventListener("click", () => {
 
 // Reset the game to the top of the tree
 function resetGame() {
-  fetch("http://localhost:8081/questiontree/reset", { method: "POST" })
+  fetch("https://question-tree.onrender.com/questiontree/reset", { method: "POST" })
     .then(() => {
       document.getElementById("playAgainBtn").style.display = "none";
       loadQuestion();
@@ -111,9 +111,9 @@ document.getElementById("playAgainBtn").addEventListener("click", () => {
 
 // Load the first question when the page opens
 window.addEventListener("DOMContentLoaded", () => { //this ai idk 
-  fetch("http://localhost:8081/questiontree/reset", { method: "POST" }) //fix placement if window closes
+  fetch("https://question-tree.onrender.com/questiontree/reset", { method: "POST" }) //fix placement if window closes
     .then(() => {
-      return fetch("http://localhost:8081/questiontree/load?id=54", { method: "POST" }); //then you can load the tree
+      return fetch("https://question-tree.onrender.com/questiontree/load?id=54", { method: "POST" }); //then you can load the tree
     })
     .then(() => {
       loadQuestion(); // now safely start at the top of the tree
