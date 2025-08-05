@@ -11,6 +11,7 @@
 	<groupId>com.questiontree-api</groupId>
 	<artifactId>SpringBoot-QuestionTree</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>SpringBoot QuestionTree API</name>
 	<description>online thing for game</description>
 	<url/>

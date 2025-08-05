@@ -323,7 +323,7 @@ public class QuestionTree{
       QuestionNode noNode = new QuestionNode(failedGuess);
       QuestionNode newQuestionNode = new QuestionNode(newQuestion, yesNode, noNode);
 
-      if(parentNode == null)
+      if(currentNode == root)
          root = newQuestionNode;
       else if(wentLeft){
          parentNode.left = newQuestionNode;
