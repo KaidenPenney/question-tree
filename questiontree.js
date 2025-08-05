@@ -113,7 +113,7 @@ document.getElementById("playAgainBtn").addEventListener("click", () => {
 window.addEventListener("DOMContentLoaded", () => { //this ai idk 
   fetch("https://question-tree.onrender.com/questiontree/reset", { method: "POST" }) //fix placement if window closes
     .then(() => {
-      return fetch("https://question-tree.onrender.com/questiontree/load?id=220", { method: "POST" }); //then you can load the tree
+      return fetch("https://question-tree.onrender.com/questiontree/load?id=72", { method: "POST" }); //then you can load the tree
     })
     .then(() => {
       loadQuestion(); // now safely start at the top of the tree

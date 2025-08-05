@@ -56,4 +56,10 @@ public class QuestionTreeService {
             throw new IllegalArgumentException("No tree was found with " + id); //doesnt exist
         }
     }
+
+    public int createNewTreeInDB() {
+        QuestionNode newRoot = new QuestionNode("Is it a dog?");
+        QuestionNode saved = repository.save(newRoot);
+        return saved.getId();
+    }
 }
