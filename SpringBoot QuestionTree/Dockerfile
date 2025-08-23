@@ -1,27 +1,13 @@
-# Use Eclipse Temurin JDK as base image
 FROM eclipse-temurin:17-jdk
 
-# Set working directory
 WORKDIR /app
 
-# Copy pom.xml and wrapper files
+RUN apt-get update && apt-get install -y maven
+
 COPY pom.xml .
-COPY .mvn .mvn
-COPY mvnw .
+RUN mvn dependency:go-offline
 
-# Make mvnw executable
-RUN chmod +x mvnw
-
-# Download dependencies
-RUN ./mvnw dependency:go-offline
-
-# Copy source code
 COPY src ./src
+RUN mvn package -DskipTests
 
-# Build the application
-RUN ./mvnw package -DskipTests
-
-# Run the application
-CMD ["java", "-jar", "target/questiontree-api-0.0.1-SNAPSHOT.jar"]
-
-#used ai for this
+CMD ["java", "-jar", "target/app.jar"]
